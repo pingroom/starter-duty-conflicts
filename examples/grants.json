@@ -1,0 +1,87 @@
+{
+  "auditId": "craft-library-v1",
+  "title": "Craft library duties",
+  "context": "Review the supplied action-pair policy for this frozen craft-library snapshot.",
+  "actions": [
+    {
+      "id": "prepare",
+      "label": "Prepare card listing"
+    },
+    {
+      "id": "publish",
+      "label": "Publish card listing"
+    },
+    {
+      "id": "retire",
+      "label": "Retire card listing"
+    }
+  ],
+  "roles": [
+    {
+      "id": "editor",
+      "label": "Listing editor",
+      "inherits": [
+        "writer",
+        "publisher"
+      ],
+      "grants": []
+    },
+    {
+      "id": "writer",
+      "label": "Card writer",
+      "inherits": [],
+      "grants": [
+        "prepare"
+      ]
+    },
+    {
+      "id": "publisher",
+      "label": "Card publisher",
+      "inherits": [],
+      "grants": [
+        "publish"
+      ]
+    },
+    {
+      "id": "retirer",
+      "label": "Card retirer",
+      "inherits": [],
+      "grants": [
+        "retire"
+      ]
+    }
+  ],
+  "subjects": [
+    {
+      "id": "alex",
+      "label": "Alex (fictional)",
+      "roles": [
+        "editor"
+      ]
+    },
+    {
+      "id": "sam",
+      "label": "Sam (fictional)",
+      "roles": [
+        "writer",
+        "retirer"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "id": "prepare_pub",
+      "actions": [
+        "prepare",
+        "publish"
+      ]
+    },
+    {
+      "id": "publish_ret",
+      "actions": [
+        "publish",
+        "retire"
+      ]
+    }
+  ]
+}
